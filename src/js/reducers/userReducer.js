@@ -1,13 +1,15 @@
-export default function reducer(state={
+let initialState = {
   user: {
-    id: null,
-    name: null,
-    age: null,
+    id: 0,
+    name: "numa",
+    age: 23,
   },
   fetching: false,
   fetched: false,
   error: null,
-}, action) {
+}
+
+export default function reducer(state=initialState, action) {
 
   switch (action.type) {
     case "FETCH_USER": {
