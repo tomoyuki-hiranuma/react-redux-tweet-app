@@ -4,7 +4,7 @@ export function fetchTweets() {
   return function(dispatch) {
     dispatch({type: "FETCH_TWEETS"});
 
-    axios.get("http://localhost:18080")
+    axios.get("http://localhost:3000/tweets")
       .then((response) => {
         dispatch({type: "FETCH_TWEETS_FULFILLED", payload: response.data})
       })
