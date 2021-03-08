@@ -19,13 +19,16 @@ export default class Tweet extends React.Component {
   }
 
   onHandleChange(e) {
-    console.log(e.target.value);
     this.setState({
       text: e.target.value
     })
   }
   submitTweet() {
-    this.props.dispatch(addTweet())
+    const id = this.props.tweets.length;
+    this.props.dispatch(addTweet(id, this.state.text));
+    this.setState({
+      text: "",
+    })
   }
   render() {
     return (
@@ -34,7 +37,7 @@ export default class Tweet extends React.Component {
           <textarea rows="10" cols="55" value={this.state.text} onChange={e => this.onHandleChange(e)}></textarea>
         </div>
         <div>
-          <button onClick={this.submitTweet.bind(this)}>submit</button>
+          <button onClick={this.submitTweet.bind(this)}>つぶやく</button>
         </div>
       </div>
     );

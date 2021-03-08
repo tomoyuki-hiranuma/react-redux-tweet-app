@@ -14,7 +14,7 @@ import Tweet from "./Tweet";
   };
 })
 export default class Layout extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.dispatch(fetchUser());
   };
   componentDidMount() {
