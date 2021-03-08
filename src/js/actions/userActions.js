@@ -3,7 +3,7 @@ export function fetchUser() {
     type: "FETCH_USER_FULFILLED",
     payload: {
       id: 0,
-      name: "Tsutomu",
+      name: "Tomo",
       age: 35
     }
   };
